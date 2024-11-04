@@ -26,6 +26,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200)  # 商品名を文字列で定義　最大文字列長は200
     price = models.PositiveIntegerField()  # 価格を整数で定義　正の整数のみ
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    img = models.ImageField(blank=True, default='noImage.png')  # 画像フィールドは省略可で、デフォルト画像はnoImage.png
 
     def __str__(self):
         return self.name
