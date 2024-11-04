@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from .models import Product  # .modelsとすることで、同じディレクトリにあるmodels.pyを参照
 
 
@@ -23,3 +23,15 @@ class ProductListView(ListView):
 class ProductCreateView(CreateView):
     model = Product
     fields = '__all__'
+
+
+'''
+UpdateViewは、指定されたプライマリキーに基づいて
+データベースからオブジェクトを取得し、フォームにそのオブジェクトのデータを埋め込む。
+'''
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    fields = '__all__'
+    template_name_suffix = '_update_form'
