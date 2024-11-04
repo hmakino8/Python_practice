@@ -2,9 +2,30 @@ from django.db import models
 from django.urls import reverse
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
+'''
+  on_delete=models.***
+
+  紐づいているデータが削除された時の振る舞い
+
+  CASCADE: 紐づいているデータが削除された時に、そのデータも削除される
+  PROTECT: 紐づいているデータが削除された時に、エラーを返す
+  SET_NULL: 紐づいているデータが削除された時に、NULLをセットする
+  SET_DEFAULT: 紐づいているデータが削除された時に、デフォルト値をセットする
+  SET(): 紐づいているデータが削除された時に、指定したデータをセットする
+'''
+
+
 class Product(models.Model):
     name = models.CharField(max_length=200)  # 商品名を文字列で定義　最大文字列長は200
     price = models.PositiveIntegerField()  # 価格を整数で定義　正の整数のみ
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
