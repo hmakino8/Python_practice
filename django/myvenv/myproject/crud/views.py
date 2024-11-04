@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
+from django.views.generic.edit import CreateView
 from .models import Product  # .modelsとすることで、同じディレクトリにあるmodels.pyを参照
 
 
@@ -17,3 +18,8 @@ class ProductListView(ListView):
     model = Product
     template_name = "list.html"
     paginate_by = 3
+
+
+class ProductCreateView(CreateView):
+    model = Product
+    fields = '__all__'

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+  新規作成
+{% endblock title %}
+{% block content %}
+  <h1>新規作成</h1>
+  {% comment %}
+    ・formタグ
+        データをサーバーに送信する
+    ・method="post"
+        データ送信にPOSTメソッドを使用することを示す
+    ・enctype="multipart/form-data"
+        ファイルアップロードを行う場合に指定する
+    ・csrf_token
+        セキュリティ対策(CSRF保護)のためのトークンを生成する
+    ・{{ form.as_p }}
+        DjangoフォームをHTMLの段落としてレンダリングする
+    ・{% url 'list' %}
+        DjangoのURLテンプレートタグを使用して、リストページへのURLを生成する
+  {% endcomment %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <a href="{% url 'list' %}">戻る</a>
+    <input type="submit" class="btn btn-primary" value="登録">
+  </form>
+{% endblock content %}
