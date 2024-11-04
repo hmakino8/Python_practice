@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 from .models import Product  # .modelsとすることで、同じディレクトリにあるmodels.pyを参照
 
 
@@ -35,3 +36,8 @@ class ProductUpdateView(UpdateView):
     model = Product
     fields = '__all__'
     template_name_suffix = '_update_form'
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    success_url = reverse_lazy('list')

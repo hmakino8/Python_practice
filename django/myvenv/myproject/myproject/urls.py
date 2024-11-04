@@ -23,4 +23,5 @@ urlpatterns = [
     path('crud/', views.ProductListView.as_view(), name='list'),
     path('crud/new/', views.ProductCreateView.as_view(), name="new"),
     path('crud/edit/<int:pk>', views.ProductUpdateView.as_view(), name="edit"),
+    path('crud/delete/<int:pk>', views.ProductDeleteView.as_view(), name="delete"),
 ]
