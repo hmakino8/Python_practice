@@ -91,6 +91,7 @@ export const MenuBar = ({ listGroup, setListGroup, setIsModalOpen }) => {
         </button>
       </div>
       {isListNameVisible &&
+        listGroup &&
         listGroup.map((list, index) => (
           <label
             className="menu-list"

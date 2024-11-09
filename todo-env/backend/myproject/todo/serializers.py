@@ -1,14 +1,14 @@
 from rest_framework import serializers
-from .models import Todo
-
-'''
-  TodoモデルをJSON形式に変換するために使用。
-  APIからのデータ取得やデータ登録・更新時に、
-  このシリアライザーがDjangoとReact間のデータ交換を行う。
-'''
+from .models import List, Task
 
 
-class TodoSerializer(serializers.ModelSerializer):
+class ListSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Todo
+        model = List
+        fields = '__all__'
+
+
+class TaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
         fields = '__all__'

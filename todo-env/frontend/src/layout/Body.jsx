@@ -3,15 +3,25 @@ import { Dashboard } from "./Dashboard";
 import { ManageTaskModal } from "../components/ManageTaskModal";
 import { MenuBar } from "../components/MenuBar";
 import { initModalData, initListGroup, initTasks } from "../utils/initializer";
+import { fetchLists } from "../API/Crud";
 import styles from "./styles/Body.module.css";
 
 export const Body = ({ isMenuOpen, searchKey }) => {
-  const DEBUG = true;
+  const DEBUG = false;
 
   const [modalData, setModalData] = useState(initModalData());
   const [tasks, setTasks] = useState(initTasks(DEBUG));
-  const [listGroup, setListGroup] = useState(initListGroup(DEBUG));
+  // const [listGroup, setListGroup] = useState(initListGroup(DEBUG));
+  const [listGroup, setListGroup] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const loadLists = async () => {
+      const lists = await fetchLists();
+      setListGroup(lists);
+    };
+    loadLists();
+  }, []);
 
   return (
     <div className={styles.body}>

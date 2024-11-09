@@ -42,20 +42,21 @@ export const Dashboard = (props) => {
         [styles.menuClose]: !isMenuOpen,
       })}
     >
-      {newListGroup.map(
-        (list) =>
-          list.isDisplay && (
-            <TaskList
-              key={list.listId}
-              list={list}
-              setTasks={setTasks}
-              setListGroup={setListGroup}
-              modalData={modalData}
-              setIsModalOpen={setIsModalOpen}
-              setModalData={setModalData}
-            />
-          )
-      )}
+      {newListGroup &&
+        newListGroup.map(
+          (list) =>
+            list.isDisplay && (
+              <TaskList
+                key={list.listId}
+                list={list}
+                setTasks={setTasks}
+                setListGroup={setListGroup}
+                modalData={modalData}
+                setIsModalOpen={setIsModalOpen}
+                setModalData={setModalData}
+              />
+            )
+        )}
     </div>
   );
 };

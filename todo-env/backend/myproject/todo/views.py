@@ -1,13 +1,18 @@
 from rest_framework import viewsets
-from .models import Todo
-from .serializers import TodoSerializer
+from .models import List, Task
+from .serializers import ListSerializer, TaskSerializer
 
 '''
-  Todoモデルのデータを管理するためのViewSet。
-  ModelViewSetを継承して、Todoモデルの全ての操作を行う。
+  List, Taskモデルのデータを管理するためのViewSet。
+  ModelViewSetを継承して、List, Taskモデルの全ての操作を行う。
 '''
 
 
-class TodoViewSet(viewsets.ModelViewSet):
-    queryset = Todo.objects.all()
-    serializer_class = TodoSerializer
+class ListViewSet(viewsets.ModelViewSet):
+    queryset = List.objects.all()
+    serializer_class = ListSerializer
+
+
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
