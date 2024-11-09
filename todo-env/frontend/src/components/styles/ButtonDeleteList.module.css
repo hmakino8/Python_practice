@@ -1,0 +1,16 @@
+.deleteButton {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: none;
+  width: 100%;
+}
+
+.deleteButtonWithDefaultList:hover {
+  background-color: #fff;
+  cursor: default;
+}
+
+.paragraph {
+  margin-left: 10px;
+}

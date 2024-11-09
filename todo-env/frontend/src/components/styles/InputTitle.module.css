@@ -1,0 +1,23 @@
+.inputTitle {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: none;
+  background-color: transparent;
+}
+
+.inputTitleComplete {
+  text-decoration: line-through;
+}
+
+.inputTitle:hover {
+  border-bottom: none;
+}
+
+.inputTitle:not(:focus):hover {
+  border-bottom: none;
+}
+
+.inputTitle:focus {
+  border-bottom: none;
+}

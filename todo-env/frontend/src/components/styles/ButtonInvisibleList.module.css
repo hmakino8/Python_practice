@@ -1,0 +1,16 @@
+.buttonInvisible {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: none;
+  width: 100%;
+}
+
+.buttonInvisibleWithDefaultList:hover {
+  cursor: default;
+  background-color: #fff;
+}
+
+.paragraph {
+  margin-left: 10px;
+}

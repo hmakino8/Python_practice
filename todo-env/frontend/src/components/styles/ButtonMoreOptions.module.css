@@ -1,0 +1,13 @@
+.buttonMoreOptions {
+  display: flex;
+  padding: 15px 10px;
+  border: none;
+  border-radius: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.buttonTaskMoreOptions {
+  padding: 8px 3px;
+  margin: 5px;
+}

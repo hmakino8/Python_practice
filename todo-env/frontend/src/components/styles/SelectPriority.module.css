@@ -1,0 +1,36 @@
+.priority {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 3px;
+  font-size: 0;
+  height: 20px;
+  border: 2px solid rgb(240, 240, 240);
+}
+
+.priorityHigh {
+  background-color: var(--red);
+}
+
+.priorityMedium {
+  background-color: var(--yellow);
+}
+
+.priorityLow {
+  background-color: #fff;
+}
+
+.priority:focus {
+  border: 2px solid rgb(240, 240, 240);
+}
+
+.priority:hover {
+  border-bottom: none;
+  cursor: pointer;
+  border: 2px solid rgb(240, 240, 240);
+}
+
+.priority:not(:focus):hover {
+  border-bottom: none;
+  border: 2px solid rgb(240, 240, 240);
+}
