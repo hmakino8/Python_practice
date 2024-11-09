@@ -13,124 +13,56 @@
 <!-- 1st Floor -->
 <div class="row mb-3">
     <h4 class="mb-3">1st Floor</h1>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-primary text-white mb-4">
-            <div class="card-body">Room A</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-primary text-white mb-4">
-            <div class="card-body">Room B</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-primary text-white mb-4">
-            <div class="card-body">Room C</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-primary text-white mb-4">
-            <div class="card-body">Room D</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-primary text-white mb-4">
-            <div class="card-body">Room E</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
+    {% for room in room_list %}
+      {% if room.floor == 1 %}
+      <div class="col-xl-3 col-md-6">
+          <div class="card bg-primary text-white mb-4">
+              <div class="card-body">{{ room.name }}</div>
+              <div class="card-footer d-flex align-items-center justify-content-between">
+                  <a class="small text-white stretched-link" href="#">Reserve this room</a>
+                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+              </div>
+          </div>
+      </div>
+      {% endif %}
+    {% endfor %}
 </div>
 <hr>
 <!-- 2nd Floor -->
 <div class="row mb-3">
     <h4 class="mb-3">2nd Floor</h1>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-success text-white mb-4">
-            <div class="card-body">Room F</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-success text-white mb-4">
-            <div class="card-body">Room G</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-success text-white mb-4">
-            <div class="card-body">Room H</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-success text-white mb-4">
-            <div class="card-body">Room I</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
+    {% for room in room_list %}
+      {% if room.floor == 2 %}
+      <div class="col-xl-3 col-md-6">
+          <div class="card bg-success text-white mb-4">
+              <div class="card-body">{{ room.name }}</div>
+              <div class="card-footer d-flex align-items-center justify-content-between">
+                  <a class="small text-white stretched-link" href="#">Reserve this room</a>
+                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+              </div>
+          </div>
+      </div>
+      {% endif %}
+    {% endfor %}
 </div>
 <hr>
 <!-- 3rd Floor -->
 <div class="row mb-3">
     <h4 class="mb-3">3rd Floor</h1>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-danger text-white mb-4">
-            <div class="card-body">Room J</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-danger text-white mb-4">
-            <div class="card-body">Room K</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-danger text-white mb-4">
-            <div class="card-body">Room L</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Reserve this room</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
+    {% for room in room_list %}
+      {% if room.floor == 3 %}
+      <div class="col-xl-3 col-md-6">
+          <div class="card bg-danger text-white mb-4">
+              <div class="card-body">{{ room.name }}</div>
+              <div class="card-footer d-flex align-items-center justify-content-between">
+                  <a class="small text-white stretched-link" href="#">Reserve this room</a>
+                  <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+              </div>
+          </div>
+      </div>
+      {% endif %}
+    {% endfor %}
 </div>
+<hr>
 
 {% endblock content %}

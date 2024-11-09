@@ -12,11 +12,11 @@
             </a>
             <div class="collapse" id="collapse1F" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="#">ROOM A</a>
-                    <a class="nav-link" href="#">ROOM B</a>
-                    <a class="nav-link" href="#">ROOM C</a>
-                    <a class="nav-link" href="#">ROOM D</a>
-                    <a class="nav-link" href="#">ROOM E</a>
+                    {% for room in room_list %}
+                      {% if room.floor == 1 %}
+                      <a class="nav-link" href="#">{{ room.name }}</a>
+                      {% endif %}
+                    {% endfor %}
                 </nav>
             </div>
             <!-- ========== 2nd Floor ========== -->
@@ -26,10 +26,11 @@
             </a>
             <div class="collapse" id="collapse2F" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="#">ROOM F</a>
-                    <a class="nav-link" href="#">ROOM G</a>
-                    <a class="nav-link" href="#">ROOM H</a>
-                    <a class="nav-link" href="#">ROOM I</a>
+                    {% for room in room_list %}
+                      {% if room.floor == 2 %}
+                      <a class="nav-link" href="#">{{ room.name }}</a>
+                      {% endif %}
+                    {% endfor %}
                 </nav>
             </div>
             <!-- ========== 3rd Floor ========== -->
@@ -39,9 +40,11 @@
             </a>
             <div class="collapse" id="collapse3F" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="#">ROOM J</a>
-                    <a class="nav-link" href="#">ROOM K</a>
-                    <a class="nav-link" href="#">ROOM L</a>
+                    {% for room in room_list %}
+                      {% if room.floor == 3 %}
+                      <a class="nav-link" href="#">{{ room.name }}</a>
+                      {% endif %}
+                    {% endfor %}
                 </nav>
             </div>
         </div>
