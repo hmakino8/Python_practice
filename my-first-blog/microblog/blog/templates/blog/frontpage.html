@@ -1,0 +1,30 @@
+{% extends 'blog/base.html'%}
+
+'''
+  <a href="{% url 'post_detail' post.slug %}">
+  post.titleをクリックすると、post_detailのURLに遷移
+  urls.pyで定義されたpost_detailという名前のURLパターンに
+  post.slugを引数として渡して、対応するURLを生成
+
+  URLが生成されるプロセス
+  1. テンプレートタグの解釈
+    Djangoテンプレートエンジンが{% url 'post_detail' post.slug %}を解釈
+  2. URLパターンの検索
+    urls.pyでname='post_detail'として定義されたURLパターンを探す。
+  3. 引数の適用
+    URLパターンに必要な引数(<slug:slug>)にpost.slugの値を適用。
+  4. URLの生成
+    適用された引数を用いて、最終的なURLを生成。
+'''
+
+{% block content%}
+{% for post in posts %}
+<div class="post block">
+    <h2 class="subtitle">{{ post.title }}</h2>
+    <small>Posted at {{ post.posted_date }}</small>
+    <p>{{ post.intro }}</p>
+    <a href="{% url 'post_detail' post.slug %}">read more</a>
+    <hr />
+</div>
+{% endfor %}
+{% endblock %}
